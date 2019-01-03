@@ -4,7 +4,7 @@ import './Blog.css';
 import Posts from './Posts/Posts';
 import NewPost from './NewPost/NewPost';
 
-import { Route, NavLink, Switch } from 'react-router-dom'
+import { Route, NavLink, Switch, Redirect } from 'react-router-dom'
 //import axios from 'axios';
 import axios from '../../axios';
 import Post from './FullPost/FullPost'; 
@@ -23,7 +23,7 @@ class Blog extends Component {
                     <nav>
                         <ul>
                             <li><NavLink 
-                                to="/" 
+                                to="/posts" 
                                 exact
                                 activeClassName="my-active"
                                 activeStyle={{
@@ -42,11 +42,11 @@ class Blog extends Component {
                 
                 {/*<Route path="/" exact render={() => <h1>Home</h1>}/>
                 <Route path="/" render={() => <h1>Home 2</h1>}/>*/}
-                <Route path="/" exact component={Posts} />
-
+                
                 <Switch>
+                    <Route path="/posts"  component={Posts} />
                     <Route path="/new-post" component={NewPost} />
-                    <Route path="/:id" exact component={FullPost} />
+                    <Redirect from="/" to="/posts"/>
                 </Switch>
                 
                 
