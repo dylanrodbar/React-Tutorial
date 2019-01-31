@@ -3,6 +3,7 @@ import * as actionTypes from './actionsTypes';
 
 
 export const saveResult = (res) => {
+    // const updatedResult = res * 2;
     return {
         type: actionTypes.STORE_RESULT,
         result: res
@@ -16,7 +17,6 @@ export const storeResult = (res) => {
         }, 2000);
     }
     
-    return
 };
 
 export const deleteResult = (resElId) => {

@@ -9,7 +9,7 @@ const result = (state = initialState, action) => {
         case actionTypes.STORE_RESULT:
             return {
                 ...state,
-                results: state.results.concat({id: new Date(), value: action.result})
+                results: state.results.concat({id: new Date(), value: action.result * 2})
             }
         case actionTypes.DELETE_RESULT:
             const updatedArray = state.results.filter((result, index) => result.id !== action.resultElId);
